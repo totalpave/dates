@@ -35,4 +35,38 @@ describe('DateUtils', () => {
             expect(DateUtils.subtractYearDifference(date, 1).getFullYear()).toBe(2017);
         });
     });
+
+    describe('getStartOfYearDate', () => {
+        const year: number = 2015;
+
+        it('returns date with correct year', () => {
+            expect(DateUtils.getStartOfYearDate(year).getFullYear()).toBe(year);
+        });
+
+        it('will never be greater than an date of the same year', () => {
+            let date = DateUtils.getStartOfYearDate(year);
+            let startOfYearDate = new Date(year, 0, 1, 0, 0, 0, 0);
+            let almostStartOfYearDate = new Date(new Date(year, 0, 1, 0, 0, 0, 0).setMilliseconds(1));
+
+            expect(date.getTime()).toBe(startOfYearDate.getTime());
+            expect(date.getTime() < almostStartOfYearDate.getTime()).toBe(true);
+        });
+    });
+
+    describe('getEndOfYearDate', () => {
+        const year: number = 2015;
+
+        it('returns date with correct year', () => {
+            expect(DateUtils.getEndOfYearDate(year).getFullYear()).toBe(year);
+        });
+
+        it('will never be less than an date of the same year', () => {
+            let date = DateUtils.getEndOfYearDate(year);
+            let endOfYearDate = new Date(new Date(year + 1, 0, 1, 0, 0, 0, 0).setMilliseconds(-1));
+            let almostEndOfYearDate = new Date(new Date(year + 1, 0, 1, 0, 0, 0, 0).setMilliseconds(-2));
+
+            expect(date.getTime()).toBe(endOfYearDate.getTime());
+            expect(date.getTime() > almostEndOfYearDate.getTime()).toBe(true);
+        });
+    });
 });
