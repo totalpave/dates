@@ -40,4 +40,14 @@ export class DateUtils {
     public static subtractYearDifference(date: Date, yearDiff: number): Date {
         return DateUtils.addYearDifference(date, yearDiff * -1);
     }
+
+    public static getStartOfYearDate(year: number): Date {
+        return new Date(year, 0, 1, 0, 0, 0, 0);
+    }
+
+    public static getEndOfYearDate(year: number): Date {
+        // Create a Date for the very start of the (year + 1); because, this is easier than creating an Date at the end of the year. 
+        // Then take the date we created and -1 milliseconds on it to go back to the previous year by 1 millisecond.
+        return new Date(DateUtils.getStartOfYearDate(year + 1).setMilliseconds(-1));
+    }
 }
