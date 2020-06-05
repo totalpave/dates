@@ -9,4 +9,4 @@ script:
   - npm run-script build
   - npm test
 env:
-  - NPM_TOKEN="travis"
+  - TOTALPAVE_NPM_TOKEN="travis"
