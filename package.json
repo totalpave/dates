@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "node --max_old_space_size=6144 ./node_modules/eslint/bin/eslint.js --ext .ts '?(src|spec)/**/*.ts' --cache",
     "build": "npm run lint && tsc",
-    "test": "npm run-script lint && nyc --reporter=lcov --reporter=text ts-node ./spec/support/jasmine.ts",
+    "test": "npm run lint && jest",
     "docs": "typedoc --excludePrivate --includeVersion -readme ./README.md --out ./docs ./src/api.ts",
     "prepublishOnly": "npm run-script build",
     "changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore --issue-pattern '[A-Z]+-\\d+' --issue-url https://totalpave.atlassian.net/browse/{id}",
@@ -26,21 +26,22 @@
   },
   "homepage": "https://github.com/totalpave/dates#readme",
   "devDependencies": {
-    "@totalpave/eslint-plugin": "6.0.1",
-    "@types/jasmine": "4.0.3",
-    "@types/node": "16.11.31",
-    "@typescript-eslint/eslint-plugin": "5.21.0",
-    "@typescript-eslint/parser": "5.21.0",
+    "@totalpave/eslint-plugin": "6.0.6",
+    "@types/jest": "29.2.5",
+    "@types/node": "18.11.18",
+    "@typescript-eslint/eslint-plugin": "5.48.0",
+    "@typescript-eslint/parser": "5.48.0",
     "auto-changelog": "2.4.0",
-    "eslint": "8.14.0",
-    "jasmine": "4.1.0",
+    "eslint": "8.31.0",
     "jasmine-spec-reporter": "7.0.0",
+    "jest": "29.3.1",
     "nyc": "15.1.0",
-    "ts-node": "10.7.0",
-    "typedoc": "0.22.15",
-    "typescript": "4.3.5"
+    "ts-jest": "29.0.3",
+    "ts-node": "10.9.1",
+    "typedoc": "0.23.24",
+    "typescript": "4.9.4"
   },
   "dependencies": {
-    "@totalpave/math": "1.0.4"
+    "@totalpave/math": "2.0.1"
   }
 }
