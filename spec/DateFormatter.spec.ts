@@ -15,7 +15,7 @@ describe('DateFormatter', () => {
     });
 
     it('formats datetime', () => {
-        expect(DateFormatter.format(date, DateFormatter.DATETIME)).toBe('');
+        expect(DateFormatter.format(date, DateFormatter.DATETIME)).toBe('2018/01/01 - 00:00:00');
     });
 
     it('Instance vs static default formats are the same', () => {
