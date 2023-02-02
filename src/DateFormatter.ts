@@ -3,6 +3,11 @@
 import {IFormatter} from '@totalpave/interfaces';
 import moment = require('moment');
 
+/**
+ * Utility for formatting dates.
+ * 
+ * @since 2.0
+ */
 export class DateFormatter implements IFormatter<Date, string> {
     private $format: string;
 

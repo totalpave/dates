@@ -5,6 +5,10 @@ const DAY_IN_MS: number = 8.64e+7;
 const DAYS_IN_YEAR: number = 365;
 const RELATIVE_YEAR: number = 31536000000; // ts / 1000ms / 60s / 60m / 24h / 365d
 
+/**
+ * Utilities for comparing and doing arithmetic for dates
+ * @since 1.0
+ */
 export class DateUtils {
     private constructor() {}
 
