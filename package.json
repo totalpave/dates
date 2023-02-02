@@ -5,15 +5,15 @@
   "main": "lib/api.js",
   "types": "lib/api.d.ts",
   "scripts": {
-    "lint": "node --max_old_space_size=6144 ./node_modules/eslint/bin/eslint.js --ext .ts '?(src|spec)/**/*.ts' --cache",
-    "build": "npm run lint && tsc",
-    "test": "npm run lint && jest",
+    "lint": "eslint --ext .ts,.tsx '?(src|spec)/**/*.?(ts|tsx)' --cache",
     "docs": "typedoc --excludePrivate --includeVersion -readme ./README.md --out ./docs ./src/api.ts",
-    "prepublishOnly": "npm run-script build",
-    "changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore --issue-pattern '[A-Z]+-\\d+' --issue-url https://totalpave.atlassian.net/browse/{id}",
-    "preversion": "npm run-script docs && git add docs",
-    "version": "npm run changelog && git add CHANGELOG.md",
-    "postversion": "git commit -m 'chore: release' && git push && git push --tags"
+    "build": "npm run lint && tsc",
+    "build:release": "tsc",
+    "changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore",
+    "test": "npm run lint && jest",
+    "preversion": "npm test",
+    "version": "NODE_ENV=production npm run-script build:release && npm run-script docs && npm run changelog && git add CHANGELOG.md docs && git commit -m 'chore: changelog'",
+    "postversion": "git push && git push --tags"
   },
   "publishConfig": {
     "registry": "https://registry.totalpave.com:48731"
