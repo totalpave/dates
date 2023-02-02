@@ -25,8 +25,12 @@
     "url": "https://github.com/totalpave/dates/issues"
   },
   "homepage": "https://github.com/totalpave/dates#readme",
+  "peerDependencies": {
+    "@totalpave/interfaces": "^4.13.0"
+  },
   "devDependencies": {
     "@totalpave/eslint-plugin": "6.0.8",
+    "@totalpave/interfaces": "4.13.0",
     "@types/jest": "29.2.5",
     "@types/node": "18.11.18",
     "@typescript-eslint/eslint-plugin": "5.48.1",
@@ -42,6 +46,7 @@
     "typescript": "4.9.4"
   },
   "dependencies": {
-    "@totalpave/math": "2.0.1"
+    "@totalpave/math": "2.0.1",
+    "moment": "2.29.4"
   }
 }
