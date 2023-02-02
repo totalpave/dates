@@ -15,6 +15,9 @@
     "version": "npm run changelog && git add CHANGELOG.md",
     "postversion": "git commit -m 'chore: release' && git push && git push --tags"
   },
+  "publishConfig": {
+    "registry": "https://registry.totalpave.com:48731"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/totalpave/dates.git"
