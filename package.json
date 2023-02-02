@@ -1,6 +1,6 @@
 {
   "name": "@totalpave/dates",
-  "version": "2.0.0-dev",
+  "version": "2.0.0",
   "description": "Date library",
   "main": "lib/api.js",
   "types": "lib/api.d.ts",
