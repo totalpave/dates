@@ -30,11 +30,11 @@ export class DateFormatter implements IFormatter<Date, string> {
      * Intended to be used for CSV/spreadsheets as spreadsheet
      * software will parse this format over DATETIME format.
      * 
-     * YYYY-MM-DD hh:mm:ss
+     * YYYY-MM-DD HH:mm:ss
      * 
      * @since 2.1.0
      */
-    public static readonly DATETIME_CSV = 'YYYY-MM-DD hh:mm:ss';
+    public static readonly DATETIME_CSV = 'YYYY-MM-DD HH:mm:ss';
 
     constructor(format?: string) {
         this.$format = format || DEFAULT_FORMAT;
