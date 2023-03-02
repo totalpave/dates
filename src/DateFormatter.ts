@@ -11,9 +11,30 @@ import moment = require('moment');
 export class DateFormatter implements IFormatter<Date, string> {
     private $format: string;
 
+    /**
+     * MMM D, YYYY
+     */
     public static readonly SHORT_DATE = 'MMM D, YYYY';
+
+    /**
+     * MMMM D, YYYY
+     */
     public static readonly LONG_DATE = 'MMMM D, YYYY';
+
+    /**
+     * YYYY/MM/DD - HH:mm:ss
+     */
     public static readonly DATETIME = 'YYYY/MM/DD - HH:mm:ss';
+
+    /**
+     * Intended to be used for CSV/spreadsheets as spreadsheet
+     * software will parse this format over DATETIME format.
+     * 
+     * YYYY-MM-DD hh:mm:ss
+     * 
+     * @since 2.1.0
+     */
+    public static readonly DATETIME_CSV = 'YYYY-MM-DD hh:mm:ss';
 
     constructor(format?: string) {
         this.$format = format || DEFAULT_FORMAT;
