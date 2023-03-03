@@ -69,4 +69,22 @@ describe('DateUtils', () => {
             expect(date.getTime() > almostEndOfYearDate.getTime()).toBe(true);
         });
     });
+
+    describe('elapsedTimeToString', () => {
+        it('30 seconds should be 30s', () => {
+            expect(DateUtils.elapsedTimeToString(30)).toBe('30s');
+        });
+
+        it('90 seconds should be 1m 30s', () => {
+            expect(DateUtils.elapsedTimeToString(90)).toBe('1m 30s');
+        });
+
+        it('3600 seconds should be 1h', () => {
+            expect(DateUtils.elapsedTimeToString(3600)).toBe('1h');
+        });
+
+        it('93785 seconds should be 1d 2h 3m 5s', () => {
+            expect(DateUtils.elapsedTimeToString(93785)).toBe('1d 2h 3m 5s');
+        });
+    });
 });
