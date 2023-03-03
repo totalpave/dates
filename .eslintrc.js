@@ -20,6 +20,6 @@ module.exports = {
         "jasmine": true
     },
     "rules": {
-        "no-console": "error"
+        "no-console": "warn"
     }
 };
