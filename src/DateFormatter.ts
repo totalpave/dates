@@ -46,7 +46,7 @@ export class DateFormatter implements IFormatter<Date, string> {
      * YYYYMMDD
      * Example: 20030104
      * 
-     * @since 2.2.0
+     * @since 2.3.0
      */
     public static readonly DATE_FILENAME = 'YYYYMMDD';
 
