@@ -66,7 +66,7 @@ export class DateUtils {
      * @returns {string}
      */
     public static elapsedTimeToString(seconds: number): string {
-        let parts: Array<string> = [];
+        let parts: string[] = [];
 
         if (seconds >= UNIT_DAY_IN_SECONDS) {
             let days: number = Math.floor(seconds / UNIT_DAY_IN_SECONDS);
