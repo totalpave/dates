@@ -87,4 +87,34 @@ describe('DateUtils', () => {
             expect(DateUtils.elapsedTimeToString(93785)).toBe('1d 2h 3m 5s');
         });
     });
+
+    describe('Timezones', () => {
+        let utc: Date = new Date();
+        utc.setHours(0);
+        utc.setMinutes(0);
+        utc.setSeconds(0);
+        utc.setMilliseconds(0);
+
+        let offset: number = 0;
+
+        beforeEach(() => {
+            offset = 0;
+        });
+
+        it('GMT -3', () => {
+            offset = 180;
+
+            let date: Date = DateUtils.applyTimezoneOffset(utc, offset);
+            expect(date.getHours()).toBe(3);
+            expect(date.getMinutes()).toBe(0);
+        });
+
+        it('GMT +3', () => {
+            offset = -180;
+
+            let date: Date = DateUtils.applyTimezoneOffset(utc, offset);
+            expect(date.getHours()).toBe(21);
+            expect(date.getMinutes()).toBe(0);
+        });
+    });
 });

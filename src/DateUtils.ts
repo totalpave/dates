@@ -92,4 +92,27 @@ export class DateUtils {
 
         return parts.join(' ');
     }
+
+    /**
+     * Applies a timezone offset to the given date.
+     * This method will return a new date instance and leave the given data untouched.
+     * 
+     * This is to avoid confusion with Date nuances, which always assumes the Date
+     * is relative to the system clock/timezone, which is no longer true once
+     * you have applied the timezone offset.
+     * 
+     * The offset number is expected to be a value given from date.getTimezoneOffset().
+     * The value represents the number of minutes to UTC. So for -3 GMT dates, the
+     * timezone offset will be 180. For +3 GMT dates, then the offset will be -180.
+     * 
+     * @param date 
+     * @param offset 
+     * @param mutable 
+     * @since 2.4.0
+     */
+    public static applyTimezoneOffset(date: Date, offset: number) {
+        let tzDate = new Date(date);
+        tzDate.setMinutes(tzDate.getMinutes() + offset);
+        return tzDate;
+    }
 }
