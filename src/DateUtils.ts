@@ -112,6 +112,11 @@ export class DateUtils {
      */
     public static applyTimezoneOffset(date: Date, offset: number) {
         let tzDate = new Date(date);
+
+        // First we need to get the difference of our TZ offset and the given offset, so we know how much to shift.
+        let localeTZOffset: number = tzDate.getTimezoneOffset();
+        offset = localeTZOffset - offset;
+
         tzDate.setMinutes(tzDate.getMinutes() + offset);
         return tzDate;
     }

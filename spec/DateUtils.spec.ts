@@ -105,7 +105,7 @@ describe('DateUtils', () => {
             offset = 180;
 
             let date: Date = DateUtils.applyTimezoneOffset(utc, offset);
-            expect(date.getHours()).toBe(3);
+            expect(date.getHours()).toBe(21);
             expect(date.getMinutes()).toBe(0);
         });
 
@@ -113,7 +113,7 @@ describe('DateUtils', () => {
             offset = -180;
 
             let date: Date = DateUtils.applyTimezoneOffset(utc, offset);
-            expect(date.getHours()).toBe(21);
+            expect(date.getHours()).toBe(3);
             expect(date.getMinutes()).toBe(0);
         });
     });
