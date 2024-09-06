@@ -1,6 +1,9 @@
 
 import {IDateFactory, TDateConstructorArgs} from '@totalpave/interfaces';
 
+/**
+ * @since 2.5.0
+ */
 export class JSDateFactory implements IDateFactory {
     public create(...args: TDateConstructorArgs): Date {
         if (args.length === 0) {
