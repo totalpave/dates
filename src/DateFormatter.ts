@@ -1,6 +1,7 @@
 'use strict';
 
 import {IFormatter} from '@totalpave/interfaces';
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 import moment = require('moment');
 
 /**
