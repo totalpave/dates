@@ -110,8 +110,8 @@ export class DateUtils {
      * @param mutable 
      * @since 2.4.0
      */
-    public static applyTimezoneOffset(date: Date, offset: number) {
-        let tzDate = new Date(date);
+    public static applyTimezoneOffset(date: Date, offset: number): Date {
+        let tzDate: Date = new Date(date);
 
         // First we need to get the difference of our TZ offset and the given offset, so we know how much to shift.
         let localeTZOffset: number = tzDate.getTimezoneOffset();
