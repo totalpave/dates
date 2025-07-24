@@ -1,4 +1,4 @@
 
 export {DateFormatter} from './DateFormatter';
-export {DateUtils} from './DateUtils';
+export {DateUtils, WEEKDAYS, MONTHS} from './DateUtils';
 export {JSDateFactory} from './JSDateFactory';

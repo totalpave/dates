@@ -9,6 +9,31 @@ const UNIT_DAY_IN_SECONDS: number = 86400;
 const UNIT_HOUR_IN_SECONDS: number = 3600;
 const UNIT_MINUTE_IN_SECONDS: number = 60;
 
+export const WEEKDAYS = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+];
+
+export const MONTHS = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+];
+
 /**
  * Utilities for comparing and doing arithmetic for dates
  * @since 1.0
@@ -119,5 +144,14 @@ export class DateUtils {
 
         tzDate.setMinutes(tzDate.getMinutes() + offset);
         return tzDate;
+    }
+
+    public static isValid(date: Date): boolean {
+        if (date instanceof Date) {
+            return !(date.toString() === 'Invalid Date');
+        }
+        else {
+            return false;
+        }
     }
 }
